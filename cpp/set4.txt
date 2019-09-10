@@ -1,0 +1,111 @@
+set 4
+1)
+#include<iostream> 
+using namespace std; 
+ class Base 
+{ 
+   int x; 
+public: 
+    virtual void fun() ;
+    int getX() { return x; } 
+}; 
+ class Derived: public Base 
+{ 
+    int y; 
+public: 
+    void fun() { cout << "fun() called"; } 
+}; 
+int main(void) 
+   Derived d; 
+    d.fun; 
+    return 0; 
+ 
+answers: for a virtual function function we need to assign "=0"
+  missing of "()" while calling function using object
+  missing of { } for main
+2)
+#include <iostream>
+using namespace std;
+double division(int a;int b) {
+   if( b == 0 ) {
+      throw "Division by zero condition!";
+   }
+   return (a/b);
+}
+int main () {
+   int x = 50;
+   int y = 0;
+   double z = 0;
+  try {
+      z = division(x, y);
+      cout << z << endl;
+   }
+  {
+     cerr << msg << endl;
+   }
+  return 0;
+}
+     
+answer: try without a catch
+comma must be present in division function
+
+3)
+#include <iostream>
+using namespace std;
+class Test 
+{
+  int x;
+  Test() { x = 5;}
+};
+int main()
+{
+   Test *t = new Test;
+   cout << t.x;
+}
+answers:
+as it is a pointer object ,data members must be accesses by ->
+as data members are  private we cannot access it directly
+
+4)#include <iostream>
+using namespace std;
+class Base {
+public:
+  virtual ~Base() {}   
+};
+int main() {
+   return 0;
+}
+ answer: no error
+
+
+5)what is the error and predict which kind of error the compiler throws?
+#include <iostream> 
+using namespace std; 
+class A{ 
+private: 
+	A(){ 
+	cout << "constructor of A\n"; 
+	}
+}; 
+int main(){ 
+	A b1; 
+	return 0; 
+} 
+answer:we cannot create object becaouse cons is private in this class
+compile time error
+
+6)
+include <iostream>
+using namespace std;
+
+int fun(int=0, int);
+
+int main()
+{
+cout << fun(5);
+return 0;
+}
+int fun(int x, int y) { return (x+y); }
+
+answer:default argument should be declared from right to left
+missing of"#" 

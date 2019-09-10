@@ -1,0 +1,164 @@
+set 9
+1)
+#include <iostream>  
+using namespace std;  
+int main( ) {  
+    string s1 = "Hello";    
+        char ch[] = ["C", "+", "+"];    
+        string s2 = string(ch);    
+        cout<<s1<<endl;    
+        cout<<s2<<endl;    
+}  
+
+answers:
+declaration of charecter array is wrong and the elements must  be declared ' ' not " "
+
+
+2)
+#include <iostream>  
+using namespace std;  
+class A  
+{  
+ public:  
+ virtual void display()  
+ {  
+  cout << "Base class is invoked"<<endl;  
+ }  
+};  
+class B:public A  
+{  
+ public:  
+ void display()  
+ {  
+  cout << "Derived Class is invoked"<<endl;  
+ }  
+};  
+int main()  
+{  
+ A a;    //pointer of base class  
+ B b;     //object of derived class  
+ a = &b;  
+ a.display();   //Late Binding occurs  
+}  
+
+answer: we cannot create object fot the A class in that way...we need to use A*a
+         and we cannot directly call the display function using dot operator.We need to use arrow(->) operator.
+
+
+3)#include <iostream>
+using namespace std;
+class Shape {
+   public:
+      void setWidth(int w) {
+         width = w;
+      }
+      void setHeight(int h) {
+         height = h;
+      }
+      
+   private:
+      int width;
+      int height;
+};
+class Rectangle:: public Shape {
+   public:
+      int getArea() { 
+         return (width * height); 
+      }
+};
+int main(void) {
+   Rectangle Rect;
+   Rect.setWidth(5,7);
+   Rect.setHeight(7);
+   cout << "Total area: " << Rect.getArea() << endl;
+   return 0;
+}
+Answers: to inherit we need to use ":"
+         we cannot access private data members
+         in the set width we can only pass one argument
+
+4)
+
+#include <iostream> 
+#include <string> 
+using namespace std; 
+ void demo()
+{  
+    static int count=0; 
+    cout << count << " "; 
+    count++; 
+} 
+int main() 
+{ 
+    for (int i=0,i<5, i++) 
+        demo(i); 
+    return 0; 
+} 
+
+answers:comma in for loop
+  we cannot pass argument in the function as it does not take any
+
+5)
+#include<iostrem> 
+using namespace std; 
+class Circle 
+{    
+   int c()
+   {
+        double radius; 
+   }
+   void fun()
+   {
+     radius=23;
+   }
+}; 
+int main() 
+{    
+    Circle obj; 
+    obj.fun();
+} 
+
+answers:we cannot access local variable of one function in another function
+iostream spelling error
+6)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char o;
+    float num1, num2;
+
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> o;
+
+    cout << "Enter two operands: ";
+    cin >> num1 >> num2;
+    
+    switch (o) 
+    {
+        case "+":
+            cout << num1 << " + " << num2 << " = " << num1+num2;
+            
+        case "-":
+            cout << num1 << " - " << num2 << " = " << num1-num2;
+            
+        case "*":
+            cout << num1 << " * " << num2 << " = " << num1*num2;
+            
+        case "/":
+            cout << num1 << " / " << num2 << " = " << num1/num2;
+            
+        default:
+            
+            cout << "Error! operator is not correct";
+            break;
+    }
+    
+    return 0;
+
+answers: no break is written for the switch statements
+         it must be case '+'
+
+
+

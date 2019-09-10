@@ -1,0 +1,128 @@
+set 5:
+1)
+#include<iostream>
+using namespace std;
+ 
+class Base
+{
+public:
+    virtual void show() = 0;
+};
+ 
+int main(void)
+{
+    Base b;
+    Base *bp;
+    return 0;
+}
+
+
+
+2)
+#include<iostream>
+using namespace std;
+ 
+int fun(int x = 0, int y = 0, int z)
+{  return (x + y + z); }
+ static int fun(int x = 0, int y = 0, int z)
+{  return (x + y + z); }
+
+int main()
+{
+   cout << fun(10);
+   return 0;
+}
+
+3)
+#include<iostream>
+using namespace std;   
+ class Test
+{
+  static int i;
+  int j;
+  Test()
+{i=4}
+};
+int main()
+{
+    cout << sizeof(Test);
+    return 0;
+}
+
+answers:static variables cannot be initialised inside the constructor
+missing ";" after i=4
+
+
+4)
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int firstNumber; secondNumber; sumOfTwoNumbers;
+    cout << "Enter two integers: ";
+    cin >> firstNumber >> secondNumber;
+    sumOfTwoNumbers == firstNumber + secondNumber;
+    cout << firstNumber << " + " <<  secondNumber << " = " << sumOfTwoNumbers;     
+    return 0;
+}
+answers:semicolon after every variable name.There must be a comma.
+double equal to sign
+
+
+5)
+
+#include<iostream.h>
+class A { 
+private: 
+    int a; 
+public: 
+    A() { a=0; } 
+       
+}; 
+  
+class B { 
+private: 
+    int b; 
+public: 
+    void showA(A& x) { 
+       
+        std:cout << "A::a=" << x.a; 
+    } 
+}; 
+  
+int main() { 
+   A a; 
+   B b; 
+   b.showA(a); 
+   return 0; 
+} 
+
+answers:5)since B is not a friend of A it cannot access private members of A
+std::cout<< ......
+
+6)
+#include<iostream>
+using namespace std;
+class P
+{
+public:
+    virtual void show() = 0;
+};
+ 
+class Q : public P { 
+   int x;
+};
+ 
+int main(void)
+{
+    Q q:
+    return 0;
+}
+
+
+ANSWERS:Compiler Error
+We get the error because we can’t create objects of abstract classes. P is an abstract class as it has a pure virtual method. Class Q also becomes abstract because it is derived from P and it doesn’t implement show().
+";" instead of ":"
+
+

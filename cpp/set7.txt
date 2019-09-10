@@ -1,0 +1,165 @@
+set 7
+1)
+#include <iostream>
+using namespace std;
+class Shape {
+   public:
+      void setWidth(int w) {
+         width = w;
+      }
+      void setHeight(int h) {
+         height = h;
+      }
+      
+   private:
+      int width;
+      int height;
+};
+class Rectangle:: public Shape {
+   public:
+      int getArea() { 
+         return (width * height); 
+      }
+};
+int main(void) {
+   Rectangle Rect;
+   Rect.setWidth(5,7);
+   Rect.setHeight(7);
+   cout << "Total area: " << Rect.getArea() << endl;
+   return 0;
+}
+Answers: to inherit we need to use ":"
+         we cannot access private data members
+         in the set width we can only pass one argument
+
+2)
+class Zee
+{
+    int i;
+    mutable int j;
+    public:
+    Zee()
+    {
+        i = 0; 
+        j = 0;
+    }
+    
+    void fool() const
+    { 
+        i++;   
+        j++;    
+    }
+};
+
+int main()
+{
+    const Zee obj;
+    obj.fool()
+}
+
+answers: i++ gives error
+mutable keyword is used with member variables of class,
+ which we want to change even if the object is of const type. Hence, mutable data members of a const objects can be modified.
+semicolon missing in the last
+
+3)
+#include <iostream>
+using namespace std;
+class Point
+{
+    int x, y;
+public:
+ Point(int i = 0, int j =0)
+   { x = i; y = j;  }
+   int getX() const { return x; }
+   int getY() {return y;}
+};
+int main()
+{
+    const Point t;
+    cout << t.getX() << " ";
+    cout << t.gety();
+    return 0;
+}
+
+answes: compiler error in cout<<t.gety()
+         //A const object can only call const functions
+
+
+4)#include <stdio.h>
+int main()
+{
+   const int x;
+   x = 10;
+   printf("%d", x);
+   return 0;
+}
+answe:One cannot change the value of 'const' variable except at the time of initialization. Compiler does check this.
+
+
+
+5)#include<iostream>
+#include<conio>
+#include <fstream>
+using namespace std;
+int main()
+{
+    fstream st; 
+    st.open("file.txt",ios::out);  
+    if !st 
+    {
+        cout<<"File creation failed";
+    }
+    else
+    {
+        cout<<"New file created";
+        st.close("file.txt"); 
+    }
+    getch();
+    return 0;
+}
+
+answers: if condition must be written in braces  
+         error in close() it doesnot take arguments
+
+6)
+#include<iostream> 
+using namespace std; 
+class base 
+{ 
+public: 
+    void fun_1() { cout << "base-1\n"; } 
+    virtual void fun_2() { cout << "base-2\n"; } 
+    virtual void fun_3() { cout << "base-3\n"; } 
+    virtual void fun_4() { cout << "base-4\n"; } 
+}; 
+class derived : public base 
+{ 
+public: 
+    void fun_1() { cout << "derived-1\n"; } 
+    void fun_2() { cout << "derived-2\n"; } 
+    void fun_4(int x) { cout << "derived-4\n"; } 
+}; 
+int main() 
+{ 
+    base *p; 
+    derived obj1; 
+    p = obj1; 
+    p.fun_1(); 
+    p.fun_2(); 
+    p.fun_3(); 
+    p.fun_4(); 
+} 
+answers: here it must be p=&obj1 as it is virtual
+         we cannoy use dot operator
+
+
+
+
+
+
+
+
+
+
+

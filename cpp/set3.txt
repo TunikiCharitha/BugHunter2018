@@ -1,0 +1,148 @@
+set 3
+1)#include<iostream>
+using namespace std;
+class P
+{
+public:
+    virtual void show() = 0;
+};
+ 
+class Q : public P { 
+   int x;
+};
+ 
+int main(void)
+{
+    Q q:
+    return 0;
+}
+
+
+ANSWERS:Compiler Error
+We get the error because we can’t create objects of abstract classes. P is an abstract class as it has a pure virtual method. Class Q also becomes abstract because it is derived from P and it doesn’t implement show().
+";" instead of ":"
+
+2)
+#include iostream
+using namespace std;
+ class printData {
+   public:
+      void print(int i) {
+        cout << "Printing int: " << i << endl;
+      }
+ };
+int main(void) {
+   printData pd;
+   pd.print(5);
+   pd.print(500.263);
+   pd.print("Hello C++");
+  return 0;
+}
+
+ANSWER: we cannot pass char and double .we can only pass integer
+angular braces missing in <iostream>
+
+3)
+#include<iostream>
+using namespace std;
+int main
+{
+    const int i = 10;
+    const int j = i + 10;   
+    i++;   
+}
+answer: we cannot increment or decrement constant variables
+missing of () in main
+
+
+4)
+#include <iostream> 
+using namespace std; 
+class construct 
+{  
+    public: 
+    float area;  
+     const() 
+    { 
+        area = 0; 
+    } ;
+      const(int a, int b) 
+    { 
+        area = a * b; 
+    } 
+      
+    void disp() 
+    { 
+        cout<< area<< endl; 
+    } 
+}; 
+int main() 
+{ 
+    const o; 
+    const o2( 10, 20); 
+    cons o3(10);
+     o.disp(); 
+    o2.disp(); 
+}
+answer: the constructor name and the class name should be same
+there should be no semicolon after the closing of the constructor
+one parameter cannot be passes as there are no suc constructors with one parameter
+
+5)
+#include<iostream> 
+using namespace std;
+ class Marks;
+{
+public:
+   int maths;
+   int science;
+     //constructor
+   Marks() {
+      cout << "Inside Constructor"<<endl;
+      cout << "C++ Object created"<<endl;
+   }
+ //Destructor
+   Marks()
+ {
+      cout << "this is a destructor"<<endl;
+      cout << "C++ Object destructed"<<endl;
+   };
+};
+int main( )
+{
+   Marks m1;
+   Marks m2;
+   return 0;
+}
+answers: there must be a "~" before the declaration of destructor
+no need of semicolon after the desstructor
+no need of semicolon after the class name
+
+6)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int year;
+
+    cout << "Enter a year: ";
+    cin >> year;
+
+    if (year % 4 == 0)
+    {
+        if (year % 100 == 0)
+        {
+            if (year % 400 == 0)
+                cout << year << " is a leap year.";
+            else
+                cout << year << " is not a leap year.";
+        }
+        else
+            cout << year << " is a leap year.";
+    }
+    else
+        cout << year << " is not a leap year.";
+
+    return 0;
+}
+answer: NO ERROR
